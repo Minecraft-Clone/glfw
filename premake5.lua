@@ -12,6 +12,10 @@ project "glfw"
 
   IncludeDir["glfw"] = "%{wks.location}/libs/glfw/include"
 
+  removedefines {
+    "GLFW_INCLUDE_NONE" -- ensure GLFW_INCLUDE_NONE is not defined during glfw compilation
+  }
+
   includedirs {
     "%{IncludeDir.glfw}"
   }
